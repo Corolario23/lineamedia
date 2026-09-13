@@ -251,9 +251,46 @@
     .platforms a{flex-direction:column;gap:2px;}
   }
 
+  /* ---- Quién escribe (bio + trayectoria) ---- */
+  .bio{margin:0;}
+  .bio p{max-width:64ch;}
+  .bio p + p{margin-top:16px;}
+  .bio .lead{color:var(--ink);}
+
+  .trayectoria{
+    margin-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .trayectoria summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 4px;
+    font-family:var(--f-display);
+    font-weight:700;
+    font-size:1.5rem;
+    color:var(--navy);
+    transition:padding-left .2s ease,color .2s ease;
+  }
+  .trayectoria summary::-webkit-details-marker{display:none;}
+  .trayectoria summary:hover,
+  .trayectoria summary:focus-visible{padding-left:12px;color:var(--accent);}
+  .trayectoria summary .chev{
+    flex:none;
+    font-family:var(--f-body);font-weight:500;font-size:1rem;
+    color:var(--slate);
+    transition:transform .25s ease;
+  }
+  .trayectoria[open] summary .chev{transform:rotate(90deg);}
+  .trayectoria .body{padding:4px 4px 24px;}
+  .trayectoria .body p{max-width:64ch;color:var(--slate);}
+  .trayectoria .body p + p{margin-top:16px;}
+  .trayectoria .body strong{color:var(--navy);font-weight:600;}
+
   @media (prefers-reduced-motion:reduce){
     .page::before{animation:none;}
     *{transition:none !important;}
+    .trayectoria[open] summary .chev{transform:none;}
   }
 </style>
 </head>
@@ -310,6 +347,26 @@
           </div>
         </li>
       </ul>
+    </section>
+
+    <!-- QUIÉN ESCRIBE -->
+    <section class="node" id="quien">
+      <p class="kicker">Detrás de líneamedia</p>
+      <h2>Quién escribe</h2>
+      <div class="bio">
+        <p class="lead">Soy Ricardo Cáceres, cirujano dedicado a la pared abdominal y las hernias. Me formé en la Universidad de Chile y me especialicé en cirugía general en el Hospital Barros Luco, y desde entonces he ido enfocando cada vez más mi trabajo en un tema que me apasiona: reparar hernias de la pared abdominal, con la técnica adecuada para cada persona.</p>
+        <p>Hoy hago un fellowship en cirugía de pared abdominal y hernias en la Clínica Santa María - Universidad de los Andes, y complementé mi formación en Brasil, uno de los polos más importantes de esta especialidad en la región. Trabajo tanto con técnicas abiertas como mínimamente invasivas, y me interesa especialmente que cada paciente entienda su problema y recupere su vida normal lo antes posible.</p>
+      </div>
+
+      <details class="trayectoria">
+        <summary>Mi trayectoria <span class="chev">›</span></summary>
+        <div class="body">
+          <p>Estudié medicina en el Hospital Clínico de la Universidad de Chile, donde hice mi internado de cirugía. Ahí tuve mi primer contacto con la cirugía de pared abdominal junto a los doctores Marco Albán y Jaime Carrasco, en el equipo que lideraba el profesor Attila Csendes.</p>
+          <p>Mi especialidad de cirugía general la hice en el <strong>Hospital Barros Luco</strong>, y esa etapa marcó mi camino hacia la pared abdominal. Aprendí de la mano del doctor Carlos Matus, ayudándolo en numerosas cirugías, incluidas reparaciones de Rives-Stoppa para grandes hernias inguinales bilaterales. En el Barros Luco también operé hernias inguinales con anestesia local en la unidad de cirugía ambulatoria, una experiencia que me dio autonomía y oficio desde temprano.</p>
+          <p>Después trabajé en el <strong>Hospital San José</strong> y luego en el <strong>Hospital de Pitrufquén</strong>, donde operé un gran volumen de hernias de todo tipo —inguinales, umbilicales, incisionales y ventrales— y di mis primeros pasos en la cirugía laparoscópica de hernias. En el <strong>Hospital de Villarrica</strong> di un salto hacia la cirugía compleja de pared: operé como cirujano principal la patología habitual y, junto al doctor Ioram Jacubovsky, participé en reconstrucciones mayores con técnicas avanzadas como el Rives y la separación de componentes.</p>
+          <p>Hace un par de años decidí dedicarme de lleno a esto. Asistí al congreso de la Sociedad Brasileña de Hérnia en Campinas, hice un mes de observación en el equipo de pared abdominal de la Clínica Santa María con el doctor Agustín Álvarez, y realicé un curso de cirugía laparoscópica en el IRCAD de São Paulo, un centro de referencia mundial. Ese camino me llevó al <strong>fellowship</strong> que hoy realizo en la Clínica Santa María y la Universidad de los Andes, donde sigo formándome en las técnicas más actuales de reparación y reconstrucción de la pared abdominal.</p>
+        </div>
+      </details>
     </section>
 
     <!-- INVESTIGACIÓN E INNOVACIÓN -->
